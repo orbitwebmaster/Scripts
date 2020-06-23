@@ -5,7 +5,7 @@
 #has to be interective 
 domain=dev.orbitweb.ca 
 shortname=dev
-rootDir="/var/www/html"
+rootDir="/var/www/$shortname"
 apacheUser=$(ps -ef | egrep '(httpd|apache2|apache)' | grep -v root | head -n1 | awk '{print $1}')
 email='dev@orbitweb.ca'
 sitesEnabled='/etc/apache2/sites-enabled/'
@@ -136,11 +136,11 @@ apt-get install mysql-client mysql-server -y
 
 #$kiosk_dir/scripts/kiosk_webapp.sh
 
-function pause() {
-		    read -p "$*"
-	    }
-	echo Server will be restart
-	pause 'Press [Enter] to continue...'
+#function pause() {
+#		    read -p "$*"
+#	    }
+#	echo Server will be restart
+#	pause 'Press [Enter] to continue...'
 
 #Bounce
 init 6
